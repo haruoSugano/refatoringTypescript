@@ -1,7 +1,17 @@
-import { AvailabilityContainer, Container, DescriptionFoodTypeConteiner, EditFoodTypeConteiner, IconConteiner } from "./styles";
+import { useFoods } from "../../hooks/useFoodsContext";
+
+import { 
+    AvailabilityContainer, 
+    Container, 
+    DescriptionFoodTypeConteiner, 
+    EditFoodTypeConteiner, 
+    IconConteiner } from "./styles";
+
 import { FiEdit3, FiTrash } from "react-icons/fi";
 
 export function Food() {
+
+    const { foods } = useFoods();
     return (
         <Container>
             <DescriptionFoodTypeConteiner>
