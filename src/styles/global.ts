@@ -27,6 +27,21 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
+  .react-modal-content {
+    top: '50%';
+    left: '50%';
+    right: 'auto';
+    bottom: 'auto';
+    margin-right: '-50%';
+    transform: 'translate(-50%; -50%)';
+    background: '#F0F0F5';
+    color: '#000000';
+    border-radius: '8px';
+    width: '736px';
+    border: 'none';
+    background-color: '#121214e6';
+  }
+
   .react-modal-text {
     padding: 16px 24px;
   }
