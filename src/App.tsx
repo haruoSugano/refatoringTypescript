@@ -1,31 +1,16 @@
-import { useState } from 'react';
-import { Header } from './components/Header';
-import { NewFoodModal } from './components/Modal';
-import { Dashboard } from './pages/Dashboard';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import Routes from './routes';
 
 import GlobalStyle from './styles/global';
 
 export function App() {
-
-  const [isNewFoodModalOpen, setIsNewFoodModalOpen] = useState(false);
-
-  function handleOpenNewFoodModal() {
-    setIsNewFoodModalOpen(true);
-  }
-
-  function handleCloseNewFoodModal() {
-    setIsNewFoodModalOpen(false);
-  }
-
   return (
     <>
-      <Header onOpenNewFoodModal={handleOpenNewFoodModal}/>
-      <Dashboard />
-      <NewFoodModal 
-        isOpen={isNewFoodModalOpen}
-        onRequestClose={handleCloseNewFoodModal}
-      />
       <GlobalStyle />
+      <Router>
+        <Routes />
+      </Router>
     </>
   );
 }

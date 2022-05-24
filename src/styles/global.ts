@@ -26,42 +26,4 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
-
-  .react-modal-content {
-    top: '50%';
-    left: '50%';
-    right: 'auto';
-    bottom: 'auto';
-    margin-right: '-50%';
-    transform: 'translate(-50%; -50%)';
-    background: '#F0F0F5';
-    color: '#000000';
-    border-radius: '8px';
-    width: '736px';
-    border: 'none';
-    background-color: '#121214e6';
-  }
-
-  .react-modal-text {
-    padding: 16px 24px;
-  }
-
-  .react-modal-icon {
-    display: flex;
-    padding: 16px 16px;
-    background: #41c900;
-    border-radius: 0 8px 8px 0;
-    margin: 0 auto;
-  }
-
-  .react-price {
-      font-style: normal;
-      font-size: 24px;
-      line-height: 34px;
-      color: #39b100;
-
-      b {
-        font-weight: 600;
-      }
-    }
 `;

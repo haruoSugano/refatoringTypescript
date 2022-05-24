@@ -1,38 +1,59 @@
-import styled from "styled-components";
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
-    background: #f0f0f5;
-    border-radius: 8px;
-`;
+interface ContainerProps {
+  available: boolean;
+}
 
-export const DescriptionFoodTypeConteiner = styled.div`
-    header {
-        background: #ffb84d;
-        border-radius: 8px 8px 0px 0px;
-        height: 192px;
-        overflow: hidden;
-        transition: 0.3s opacity;
-        text-align: center;
+export const Container = styled.div<ContainerProps>`
+  background: #f0f0f5;
+  border-radius: 8px;
 
-        img {
-            pointer-events: none;
-            user-select: none;
-        }
+  header {
+    background: #ffb84d;
+    border-radius: 8px 8px 0px 0px;
+    height: 192px;
+    overflow: hidden;
+    transition: 0.3s opacity;
+    text-align: center;
+
+    ${props =>
+    !props.available &&
+    css`
+        opacity: 0.3;
+      `};
+
+    img {
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+
+  section.body {
+    padding: 30px;
+
+    h2 {
+      color: #3d3d4d;
     }
 
-    section {
-            h2 {
-                color: #3d3d4d;
-            }
+    p {
+      color: #3d3d4d;
 
-            p {
-                color: #3d3d4d;
-                margin-top: 16px;
-            }
+      margin-top: 16px;
     }
-`;
 
-export const EditFoodTypeConteiner = styled.section`
+    .price {
+      font-style: normal;
+      font-size: 24px;
+      line-height: 34px;
+      color: #39b100;
+
+      b {
+        font-weight: 600;
+      }
+    }
+  }
+
+  section.footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,12 +61,11 @@ export const EditFoodTypeConteiner = styled.section`
     padding: 20px 30px;
     background: #e4e4eb;
     border-radius: 0px 0px 8px 8px;
-`;
 
-export const IconConteiner = styled.div`
-    display: flex;
+    div.icon-container {
+      display: flex;
 
-    button {
+      button {
         background: #fff;
         padding: 10px;
         border-radius: 8px;
@@ -54,24 +74,24 @@ export const IconConteiner = styled.div`
         transition: 0.1s;
 
         svg {
-        color: #3d3d4d;
+          color: #3d3d4d;
         }
 
         & + button {
-        margin-left: 6px;
+          margin-left: 6px;
         }
+      }
     }
-`;
 
-export const AvailabilityContainer = styled.div`
-    display: flex;
-    align-items: center;
+    div.availability-container {
+      display: flex;
+      align-items: center;
 
-    p {
+      p {
         color: #3d3d4d;
-    }
+      }
 
-    .switch {
+      .switch {
         position: relative;
         display: inline-block;
         width: 88px;
@@ -124,4 +144,6 @@ export const AvailabilityContainer = styled.div`
           transform: translateX(32px);
         }
       }
+    }
+  }
 `;
